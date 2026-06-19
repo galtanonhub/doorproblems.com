@@ -240,6 +240,17 @@ document.addEventListener('DOMContentLoaded', () => {
     resetAuto();
   }
 
+  /* ── Hero Video (click-to-play) ──────────────────────── */
+  const heroVideo = document.getElementById('heroVideo');
+  const heroVideoBtn = document.getElementById('heroVideoBtn');
+  if (heroVideo && heroVideoBtn) {
+    heroVideoBtn.addEventListener('click', () => {
+      heroVideoBtn.classList.add('is-hidden');
+      heroVideo.play();
+    });
+    heroVideo.addEventListener('ended', () => heroVideoBtn.classList.remove('is-hidden'));
+  }
+
   /* ── Phone number formatting ──────────────────────────── */
   const phoneInputs = document.querySelectorAll('input[type="tel"]');
   phoneInputs.forEach(input => {

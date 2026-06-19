@@ -106,32 +106,16 @@
         </div>
       </div>
 
-      <!-- Right col: carousel -->
-      <div class="hero-carousel">
-        <div class="carousel-track">
-          <div class="carousel-slide active">
-            <img src="https://placehold.co/640x480/1a3a6b/ffffff?text=Sliding+Glass+Door+Repair" alt="Sliding glass door repair">
-          </div>
-          <div class="carousel-slide">
-            <img src="https://placehold.co/640x480/0d2044/ffffff?text=Track+%26+Roller+Replacement" alt="Track and roller replacement">
-          </div>
-          <div class="carousel-slide">
-            <img src="https://placehold.co/640x480/2558a8/ffffff?text=Glass+Replacement" alt="Glass replacement">
-          </div>
-          <div class="carousel-slide">
-            <img src="https://placehold.co/640x480/1a3a6b/ffffff?text=Property+Management" alt="Property management">
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-prev" aria-label="Previous slide">&#8249;</button>
-          <div class="carousel-dots">
-            <button class="carousel-dot active" aria-label="Slide 1"></button>
-            <button class="carousel-dot" aria-label="Slide 2"></button>
-            <button class="carousel-dot" aria-label="Slide 3"></button>
-            <button class="carousel-dot" aria-label="Slide 4"></button>
-          </div>
-          <button class="carousel-next" aria-label="Next slide">&#8250;</button>
-        </div>
+      <!-- Right col: before/after video -->
+      <div class="hero-video">
+        <video id="heroVideo" class="hero-video-el" poster="video/door-repair-poster.jpg" preload="none" playsinline controls>
+          <source src="video/door-repair-demo.mp4" type="video/mp4">
+          Your browser doesn't support embedded video.
+        </video>
+        <button class="hero-video-overlay" id="heroVideoBtn" aria-label="Play before and after sliding door repair video">
+          <span class="hero-video-btn"><span class="hero-video-tri"></span></span>
+          <span class="hero-video-cap">Watch a real before &amp; after</span>
+        </button>
       </div>
 
     </div>

@@ -8,5 +8,5 @@ deployment:
     # are intentionally left out.
     - export DEPLOYPATH=/home/doorproblems/public_html/test/
     - /bin/mkdir -p $DEPLOYPATH
-    - /bin/cp -R css js images $DEPLOYPATH
+    - /bin/cp -R css js images video $DEPLOYPATH
     - /bin/cp *.html $DEPLOYPATH
