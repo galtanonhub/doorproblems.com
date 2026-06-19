@@ -1,10 +1,10 @@
-﻿/* ============================================================
-   DoorProblems.com â Main JavaScript
+/* ============================================================
+   DoorProblems.com — Main JavaScript
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ââ Mobile Menu ââââââââââââââââââââââââââââââââââââââââ */
+  /* ── Mobile Menu ──────────────────────────────────────── */
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.querySelector('.mobile-menu');
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ââ Active Nav Link ââââââââââââââââââââââââââââââââââââ */
+  /* ── Active Nav Link ──────────────────────────────────── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
     const href = link.getAttribute('href');
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ââ Booking / Contact Form âââââââââââââââââââââââââââââ */
+  /* ── Booking / Contact Form ───────────────────────────── */
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
     // Set min date on date picker to today
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = bookingForm.querySelector('[type="submit"]');
       const origText = submitBtn.textContent;
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Sendingâ¦';
+      submitBtn.textContent = 'Sending…';
 
       setTimeout(() => {
         bookingForm.style.display = 'none';
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!validateForm(contactForm)) return;
       const btn = contactForm.querySelector('[type="submit"]');
       btn.disabled = true;
-      btn.textContent = 'Sendingâ¦';
+      btn.textContent = 'Sending…';
       setTimeout(() => {
         contactForm.reset();
         btn.disabled = false;
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ââ Form Validation ââââââââââââââââââââââââââââââââââââ */
+  /* ── Form Validation ──────────────────────────────────── */
   function validateForm(form) {
     let valid = true;
     form.querySelectorAll('[required]').forEach(field => {
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function isEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
   function isPhone(v) { return /^[\d\s\-\+\(\)]{7,}$/.test(v); }
 
-  /* ââ Toast Notification âââââââââââââââââââââââââââââââââ */
+  /* ── Toast Notification ───────────────────────────────── */
   function showToast(msg) {
     const t = document.createElement('div');
     t.textContent = msg;
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => t.remove(), 4000);
   }
 
-  /* ââ Scroll Animations ââââââââââââââââââââââââââââââââââ */
+  /* ── Scroll Animations ────────────────────────────────── */
   const animEls = document.querySelectorAll('.service-card, .testimonial-card, .value-card, .area-card, .why-feature, .team-card');
 
   if ('IntersectionObserver' in window) {
@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ââ Testimonials Filter ââââââââââââââââââââââââââââââââ */
+  /* ── Testimonials Filter ──────────────────────────────── */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const cards = document.querySelectorAll('.testimonial-card[data-service]');
 
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ââ Counter Animation (hero stats) ââââââââââââââââââââ */
+  /* ── Counter Animation (hero stats) ──────────────────── */
   function animateCount(el, target, duration) {
     let start = 0;
     const step = (target / (duration / 16));
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     statNums.forEach(el => statsObs.observe(el));
   }
 
-  /* ââ Hero Carousel âââââââââââââââââââââââââââââââââââââ */
+  /* ── Hero Carousel ───────────────────────────────────── */
   const carouselTrack = document.querySelector('.carousel-track');
   if (carouselTrack) {
     const slides  = document.querySelectorAll('.carousel-slide');
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
     resetAuto();
   }
 
-  /* ââ Phone number formatting ââââââââââââââââââââââââââââ */
+  /* ── Phone number formatting ──────────────────────────── */
   const phoneInputs = document.querySelectorAll('input[type="tel"]');
   phoneInputs.forEach(input => {
     input.addEventListener('input', (e) => {
@@ -252,4 +252,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
