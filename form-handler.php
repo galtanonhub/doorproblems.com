@@ -21,7 +21,7 @@ function send_mail(string $to, string $subject, string $body, string $reply_to =
 }
 
 $OWNER_EMAIL = 'galtanon@protonmail.com';
-$OWNER_SMS   = '7143106033@tmomail.net';
+$OWNER_SMS   = '3522344353@txt.voice.google.com';
 $form_type   = clean($_POST['form_type'] ?? '');
 
 /* ── Quick Message Form ──────────────────────────────────── */
