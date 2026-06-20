@@ -1,6 +1,6 @@
 <?php
 // Temporary debug file — DELETE after testing
-$to      = 'help@doorproblems.com';
+$to      = 'galtanon@protonmail.com';
 $subject = 'Mail test from DoorProblems.com server';
 $body    = 'If you see this, PHP mail() is working correctly. Time: ' . date('Y-m-d H:i:s');
 $headers = "From: help@doorproblems.com\r\nContent-Type: text/plain; charset=UTF-8\r\n";
