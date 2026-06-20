@@ -30,7 +30,8 @@
   --max-w:         1180px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; }
 
 body {
   font-family: var(--sans);
