@@ -6,7 +6,7 @@ deployment:
     # repo root into the staging folder. The *.html copy auto-includes any new pages you add;
     # the asset dirs (css, js, images) are copied recursively. .git/.claude/.cpanel.yml/CLAUDE.md
     # are intentionally left out.
-    - export DEPLOYPATH=/home/doorproblems/public_html/test/
+    - export DEPLOYPATH=/home/doorproblems/public_html/
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R css js images video $DEPLOYPATH
     - /bin/cp *.html $DEPLOYPATH
