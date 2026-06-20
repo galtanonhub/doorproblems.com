@@ -10,3 +10,6 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH
     - /bin/cp -R css js images video $DEPLOYPATH
     - /bin/cp *.html $DEPLOYPATH
+    # robots.txt + sitemap.xml are crawler files — only effective at the domain
+    # root, so they do real work once DEPLOYPATH points at public_html/ (launch).
+    - /bin/cp robots.txt sitemap.xml $DEPLOYPATH

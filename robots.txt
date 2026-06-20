@@ -1,0 +1,9 @@
+# robots.txt for doorproblems.com
+# Belongs at the domain ROOT (public_html/robots.txt). Crawlers only read
+# /robots.txt at the domain root — a copy sitting at /test/ is ignored, so
+# this file only takes effect once the site is served from the root at launch.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://doorproblems.com/sitemap.xml
