@@ -53,23 +53,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
-
       if (!validateForm(bookingForm)) return;
 
-      // Simulate async submission
       const submitBtn = bookingForm.querySelector('[type="submit"]');
-      const origText = submitBtn.textContent;
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
-      setTimeout(() => {
-        bookingForm.style.display = 'none';
-        const msg = document.getElementById('successMessage');
-        if (msg) {
-          msg.classList.add('show');
-          msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-      }, 900);
+      const data = new FormData(bookingForm);
+      data.append('form_type', 'booking');
+
+      fetch('form-handler.php', { method: 'POST', body: data })
+        .then(r => r.json())
+        .then(json => {
+          if (json.success) {
+            bookingForm.style.display = 'none';
+            const msg = document.getElementById('successMessage');
+            if (msg) { msg.classList.add('show'); msg.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+          } else {
+            submitBtn.disabled = false;
+            submitBtn.textContent = '📅 Confirm My Appointment Request';
+            showToast('Something went wrong — please call us at (352) 234-4353.');
+          }
+        })
+        .catch(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = '📅 Confirm My Appointment Request';
+          showToast('Something went wrong — please call us at (352) 234-4353.');
+        });
     });
   }
 
@@ -78,15 +88,33 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       if (!validateForm(contactForm)) return;
+
       const btn = contactForm.querySelector('[type="submit"]');
       btn.disabled = true;
       btn.textContent = 'Sending…';
-      setTimeout(() => {
-        contactForm.reset();
-        btn.disabled = false;
-        btn.textContent = 'Send Message';
-        showToast('Message sent! We\'ll be in touch within 1 business day.');
-      }, 800);
+
+      const data = new FormData(contactForm);
+      data.append('form_type', 'contact');
+
+      fetch('form-handler.php', { method: 'POST', body: data })
+        .then(r => r.json())
+        .then(json => {
+          if (json.success) {
+            contactForm.reset();
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            showToast('Message sent! We\'ll be in touch soon.');
+          } else {
+            btn.disabled = false;
+            btn.textContent = 'Send Message';
+            showToast('Something went wrong — please call us at (352) 234-4353.');
+          }
+        })
+        .catch(() => {
+          btn.disabled = false;
+          btn.textContent = 'Send Message';
+          showToast('Something went wrong — please call us at (352) 234-4353.');
+        });
     });
   }
 
