@@ -20,7 +20,7 @@ function send_mail(string $to, string $subject, string $body, string $reply_to =
     return mail($to, $subject, $body, $headers);
 }
 
-$OWNER_EMAIL = 'help@doorproblems.com';
+$OWNER_EMAIL = 'galtanon@protonmail.com';
 $OWNER_SMS   = '7143106033@tmomail.net';
 $form_type   = clean($_POST['form_type'] ?? '');
 
