@@ -12,7 +12,7 @@ function clean(string $val): string {
 }
 
 function send_mail(string $to, string $subject, string $body, string $reply_to = ''): bool {
-    $headers  = "From: DoorProblems.com <noreply@doorproblems.com>\r\n";
+    $headers  = "From: DoorProblems.com <help@doorproblems.com>\r\n";
     $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
     if ($reply_to) {
         $headers .= "Reply-To: $reply_to\r\n";
